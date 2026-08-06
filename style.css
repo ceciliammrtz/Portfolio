@@ -172,6 +172,51 @@ body {
   align-items: center;
   gap: 0.25rem;
 }
+/* --- About & Project Additions --- */
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.75rem;
+  line-height: 1.7;
+}
+
+.about-card p + p {
+  margin-top: 1rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.tech-stack span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 640px) {
