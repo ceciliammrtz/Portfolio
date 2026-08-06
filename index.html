@@ -1,264 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cecilia Martinez Rodriguez | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Portfolio</title>
   <style>
-    /* CSS RESETS & GLOBAL STYLES */
+    /* Base CSS Variables & Resets */
     :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
       --primary: #2563eb;
       --primary-hover: #1d4ed8;
-      --border: #e2e8f0;
-      --radius: 8px;
+      --bg-color: #f9fafb;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --text-subtle: #6b7280;
+      --border-color: #e5e7eb;
+      --max-width: 1200px;
+      --radius: 12px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
-    
-    /* CONTAINER & HEADERS */
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-    header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 40px 0; margin-bottom: 40px; }
-    
-    .profile-flex { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
-    .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); background: #cbd5e1; }
-    .profile-bio h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; }
-    .profile-bio p { color: var(--muted); max-width: 600px; margin-bottom: 16px; }
-    
-    .social-links a { color: var(--primary); text-decoration: none; font-weight: 600; margin-right: 15px; }
-    .social-links a:hover { text-decoration: underline; }
-
-    /* SECTION TITLES & TABS NAVIGATION */
-    .section-title { font-size: 1.6rem; margin: 40px 0 20px 0; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
-    
-    .tabs-nav { display: flex; gap: 10px; border-bottom: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }
-    .tab-btn {
-      background: none; border: none; padding: 10px 18px; font-size: 1rem; font-weight: 600;
-      color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    .tab-btn:hover { color: var(--primary); }
-    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
 
-    /* TAB CONTENT PANELS */
-    .tab-content { display: none; }
-    .tab-content.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-
-    /* CARD STYLING */
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
-    .card-img { width: 100%; height: 180px; object-fit: cover; background: #e2e8f0; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
-    .card-img:hover { opacity: 0.9; transform: scale(1.01); }
-    .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-    .card-body h3 { font-size: 1.2rem; margin-bottom: 8px; }
-    .card-body p { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; flex-grow: 1; }
-    
-    .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
-    .btn {
-      display: inline-block; background: var(--primary); color: white; text-decoration: none;
-      padding: 8px 14px; border-radius: 4px; font-weight: 500; text-align: center; font-size: 0.85rem;
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
     }
-    .btn:hover { background: var(--primary-hover); }
-    .btn-secondary { background: #e2e8f0; color: var(--text); }
-    .btn-secondary:hover { background: #cbd5e1; }
 
-    /* MODAL / LIGHTBOX STYLES */
-    .modal {
-      display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.88); backdrop-filter: blur(5px);
-      align-items: center; justify-content: center; padding: 20px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .modal.active { display: flex; }
-    .modal-wrapper { position: relative; max-width: 90%; max-height: 90%; text-align: center; }
-    .modal-img { max-width: 100%; max-height: 80vh; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); object-fit: contain; }
-    .modal-caption { color: #ffffff; margin-top: 12px; font-size: 1.1rem; font-weight: 500; }
-    .modal-close { position: absolute; top: 20px; right: 30px; color: #ffffff; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none; transition: color 0.2s; }
-    .modal-close:hover { color: #60a5fa; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Portfolio Section Styles */
+    .portfolio-section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .item-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      background: var(--card-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-tag {
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: #f3f4f6;
+      color: #374151;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      transition: color 0.15s ease;
+    }
+
+    .card-link:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    /* Coursework Grid & Badges */
+    .coursework-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .coursework-category {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .coursework-category h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .course-badge {
+      background-color: #f3f4f6;
+      color: #374151;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.4rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 0;
+      background-color: var(--card-bg);
+      text-align: center;
+      color: var(--text-subtle);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION / INTRO -->
-  <header>
-    <div class="container profile-flex">
-      <img src="https://via.placeholder.com/140" alt="Your Name Profile Picture" class="profile-img" onclick="openModal(this)">
-      <div class="profile-bio">
-        <h1>Your Name</h1>
-        <p>Mechanical Engineer & Researcher specializing in CAD design, astrophysical data analysis, and sustainable building & community energy initiatives.</p>
-        <div class="social-links">
-          <a href="mailto:your.email@example.com">Email</a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-          <a href="resume.pdf" target="_blank">Download Resume (PDF)</a>
-        </div>
-      </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand">Engineering Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#engineering-projects">Engineering Projects</a></li>
+        <li><a href="#presentations-writing">Presentations & Writing</a></li>
+        <li><a href="#relevant-coursework">Coursework</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1>Engineering Portfolio</h1>
+      <p>Mechanical design, advanced manufacturing, astrophysics research, and energy advocacy.</p>
     </div>
   </header>
 
-  <main class="container">
+  <main>
 
     <!-- SECTION 1: ENGINEERING PROJECTS -->
-    <h2 class="section-title">1. Engineering Projects</h2>
-    
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="openTab(event, 'solidworks')">SolidWorks Concept Designs</button>
-      <button class="tab-btn" onclick="openTab(event, 'manufacturing')">Manufacturing</button>
-    </div>
+    <section id="engineering-projects" class="portfolio-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Engineering Projects</h2>
+          <p class="section-lead">
+            Hands-on CAD modeling, mechanical design, and physical fabrication projects.
+          </p>
+        </header>
 
-    <!-- SolidWorks Tab -->
-    <div id="solidworks" class="tab-content active">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x180" alt="Reverse Engineered Toy Helicopter - SolidWorks Rendering" class="card-img" onclick="openModal(this)">
-        <div class="card-body">
-          <h3>Reverse Engineered Toy Helicopter</h3>
-          <p>3D mechanical modeling, physical component tear-down, and full parametric assembly created in SolidWorks.</p>
-          <div class="btn-group">
-            <a href="#" class="btn">View Renderings</a>
-          </div>
+        <div class="card-grid">
+          
+          <!-- Card 1: SolidWorks Concepts -->
+          <article class="item-card">
+            <div>
+              <div class="card-tag">CAD & Design</div>
+              <h3 class="card-title">SolidWorks Concepts</h3>
+              <p class="card-description">
+                A showcase of parametric 3D CAD modeling, multi-part assembly design, finite element analysis (FEA) simulations, and geometric dimensioning and tolerancing (GD&T) drafting.
+              </p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span class="meta-item">🛠️ SolidWorks / FEA</span>
+                <span class="meta-item">📍 CAD Models & Assemblies</span>
+              </div>
+              <a href="#" class="card-link" aria-label="View SolidWorks Concepts">View Project Models &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Manufacturing -->
+          <article class="item-card">
+            <div>
+              <div class="card-tag">Fabrication & Machining</div>
+              <h3 class="card-title">Manufacturing</h3>
+              <p class="card-description">
+                Physical prototyping and production work detailing CNC milling, manual lathe machining, rapid additive manufacturing (3D printing), and Design for Manufacturability (DFM) principles.
+              </p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span class="meta-item">⚙️ CNC / Lathe / 3D Printing</span>
+                <span class="meta-item">📍 Prototypes & Parts</span>
+              </div>
+              <a href="#" class="card-link" aria-label="View Manufacturing Project">View Manufacturing Documentation &rarr;</a>
+            </div>
+          </article>
+
         </div>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x180" alt="Addition & Subtraction Teaching Aid - CAD Assembly" class="card-img" onclick="openModal(this)">
-        <div class="card-body">
-          <h3>Addition & Subtraction Teaching Aid</h3>
-          <p>Interactive mechanical device designed to assist early childhood math learning through physical gear and slider mechanisms.</p>
-          <div class="btn-group">
-            <a href="#" class="btn">View CAD Model</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Manufacturing Tab -->
-    <div id="manufacturing" class="tab-content">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x180" alt="1930s Toy Racecar Machining & Build" class="card-img" onclick="openModal(this)">
-        <div class="card-body">
-          <h3>1930s Toy Racecar</h3>
-          <p>Precision machining and fabrication project modeling classic 1930s racecars, utilizing manual lathe, mill, and shop tolerances.</p>
-          <div class="btn-group">
-            <a href="#" class="btn">View Build Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    </section>
 
     <!-- SECTION 2: PRESENTATIONS & WRITING -->
-    <h2 class="section-title">2. Presentations & Writing</h2>
-    
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="openTab(event, 'veritas')">VERITAS Research</button>
-      <button class="tab-btn" onclick="openTab(event, 'berl')">Building Energy Lab</button>
-      <button class="tab-btn" onclick="openTab(event, 'lsts')">Let's Share the Sun</button>
-    </div>
+    <section id="presentations-writing" class="portfolio-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Presentations & Writing</h2>
+          <p class="section-lead">
+            Research publications, technical lab documentations, and keynote presentations across physics, energy efficiency, and equity advocacy.
+          </p>
+        </header>
 
-    <!-- VERITAS Tab -->
-    <div id="veritas" class="tab-content active">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x180" alt="VERITAS Flaring Blazar B2 1811+31 Poster Preview" class="card-img" onclick="openModal(this)">
-        <div class="card-body">
-          <h3>Flaring Blazar B2 1811+31</h3>
-          <p>Astrophysical analysis of gamma-ray emissions using VERITAS telescope array data. Includes research posters, senior thesis deck, and manuscript in progress.</p>
-          <div class="btn-group">
-            <a href="#" class="btn">Senior Thesis Deck</a>
-            <a href="#" class="btn btn-secondary">Poster 1</a>
-            <a href="#" class="btn btn-secondary">Poster 2</a>
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="card-grid">
+          
+          <!-- Card 1: VERITAS -->
+          <article class="item-card">
+            <div>
+              <div class="card-tag">Research & Analysis</div>
+              <h3 class="card-title">VERITAS</h3>
+              <p class="card-description">
+                A deep dive into high-energy astrophysics observation data, detailing computational methodologies and observational insights from ground-based gamma-ray astronomy.
+              </p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span class="meta-item">📍 Presentation / Paper</span>
+                <span class="meta-item">🗓️ 2024</span>
+              </div>
+              <a href="#" class="card-link" aria-label="View VERITAS research project">View Work &rarr;</a>
+            </div>
+          </article>
 
-    <!-- Building Energy Lab Tab -->
-    <div id="berl" class="tab-content">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x180" alt="Building Energy Research Lab Poster - Summer 2025" class="card-img" onclick="openModal(this)">
-        <div class="card-body">
-          <h3>Building Energy Research Lab (Summer '25)</h3>
-          <p>Investigated building energy performance, environmental sensor data, and efficiency metrics during Summer 2025 research fellowship.</p>
-          <div class="btn-group">
-            <a href="#" class="btn">View Research Poster</a>
-          </div>
-        </div>
-      </div>
-    </div>
+          <!-- Card 2: BERL -->
+          <article class="item-card">
+            <div>
+              <div class="card-tag">Technical Report</div>
+              <h3 class="card-title">BERL</h3>
+              <p class="card-description">
+                Documentation and investigative analysis for the Behavioral & Energy Research Lab, focusing on energy efficiency strategies, user behavior modeling, and sustainability metrics.
+              </p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span class="meta-item">📍 Lab Report / Case Study</span>
+                <span class="meta-item">🗓️ 2023</span>
+              </div>
+              <a href="#" class="card-link" aria-label="View BERL report">View Work &rarr;</a>
+            </div>
+          </article>
 
-    <!-- Let's Share the Sun Tab -->
-    <div id="lsts" class="tab-content">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x180" alt="LSTS 2025-2026 Inaugural Impact Report Cover" class="card-img" onclick="openModal(this)">
-        <div class="card-body">
-          <h3>Inaugural 2025–2026 Impact Report</h3>
-          <p>Authored and designed LSTS' 13-page biennial report detailing community reach, operational milestones, and donor engagement.</p>
-          <div class="btn-group">
-            <a href="#" class="btn">Read Impact Report</a>
-          </div>
+          <!-- Card 3: Let's Share the Sun -->
+          <article class="item-card">
+            <div>
+              <div class="card-tag">Non-Profit & Advocacy</div>
+              <h3 class="card-title">Let's Share the Sun</h3>
+              <p class="card-description">
+                Articles and field presentations advocating for solar equity and clean energy access in underserved international communities, detailing impact and installation logistics.
+              </p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span class="meta-item">📍 Keynote & Published Article</span>
+                <span class="meta-item">🗓️ 2023</span>
+              </div>
+              <a href="#" class="card-link" aria-label="View Let's Share the Sun advocacy work">View Work &rarr;</a>
+            </div>
+          </article>
+
         </div>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x180" alt="LSTS Solar Panel and Battery Field Installation" class="card-img" onclick="openModal(this)">
-        <div class="card-body">
-          <h3>Website Redesign & Field Installations</h3>
-          <p>Leading the official web platform redesign and hosting corporate donor delegations for off-grid solar and battery installations at community homes.</p>
-          <div class="btn-group">
-            <a href="#" class="btn">Visit Site (In Progress)</a>
+    </section>
+
+    <!-- SECTION 3: RELEVANT COURSEWORK -->
+    <section id="relevant-coursework" class="portfolio-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Relevant Coursework</h2>
+          <p class="section-lead">
+            Academic courses covering mechanical fundamentals, materials science, thermodynamics, and computational engineering tools.
+          </p>
+        </header>
+
+        <div class="coursework-grid">
+          
+          <!-- Category 1: Design & Mechanics -->
+          <div class="coursework-category">
+            <h3>Mechanical Design & Mechanics</h3>
+            <ul class="course-list">
+              <li class="course-badge">Computer-Aided Design (CAD)</li>
+              <li class="course-badge">Statics & Dynamics</li>
+              <li class="course-badge">Mechanics of Materials</li>
+              <li class="course-badge">Machine Component Design</li>
+              <li class="course-badge">Kinematics & Dynamics of Machinery</li>
+            </ul>
           </div>
+
+          <!-- Category 2: Thermal & Materials -->
+          <div class="coursework-category">
+            <h3>Thermal & Materials Science</h3>
+            <ul class="course-list">
+              <li class="course-badge">Thermodynamics</li>
+              <li class="course-badge">Fluid Mechanics</li>
+              <li class="course-badge">Heat Transfer</li>
+              <li class="course-badge">Engineering Materials Science</li>
+              <li class="course-badge">Manufacturing Processes</li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Computation & Systems -->
+          <div class="coursework-category">
+            <h3>Analysis & Systems</h3>
+            <ul class="course-list">
+              <li class="course-badge">Finite Element Analysis (FEA)</li>
+              <li class="course-badge">Control Systems & Mechatronics</li>
+              <li class="course-badge">Computational Fluid Dynamics (CFD)</li>
+              <li class="course-badge">Numerical Methods in Engineering</li>
+              <li class="course-badge">Differential Equations</li>
+            </ul>
+          </div>
+
         </div>
       </div>
-    </div>
+    </section>
 
   </main>
 
-  <!-- FULL-SCREEN IMAGE MODAL -->
-  <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="modal-close">&times;</span>
-    <div class="modal-wrapper" onclick="event.stopPropagation()">
-      <img id="modalImg" class="modal-img" src="" alt="Preview">
-      <div id="modalCaption" class="modal-caption"></div>
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <p>&copy; 2026 Portfolio. All rights reserved.</p>
     </div>
-  </div>
+  </footer>
 
-  <!-- JAVASCRIPT FOR TABS & MODAL -->
-  <script>
-    // Tab switching functionality
-    function openTab(evt, tabName) {
-      const section = evt.currentTarget.closest('.container');
-      const navButtons = evt.currentTarget.parentElement.querySelectorAll('.tab-btn');
-      navButtons.forEach(btn => btn.classList.remove('active'));
-      
-      let sibling = evt.currentTarget.parentElement.nextElementSibling;
-      while (sibling && sibling.classList.contains('tab-content')) {
-        sibling.classList.remove('active');
-        if (sibling.id === tabName) {
-          sibling.classList.add('active');
-        }
-        sibling = sibling.nextElementSibling;
-      }
-      evt.currentTarget.classList.add('active');
-    }
-
-    // Modal / Lightbox functionality
-    function openModal(imgElement) {
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("modalImg");
-      const modalCaption = document.getElementById("modalCaption");
-
-      modalImg.src = imgElement.src;
-      modalCaption.textContent = imgElement.alt || "Project Preview";
-      modal.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-      const modal = document.getElementById("imageModal");
-      modal.classList.remove("active");
-      document.body.style.overflow = "auto";
-    }
-
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") closeModal();
-    });
-  </script>
 </body>
 </html>
