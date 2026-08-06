@@ -3,63 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engineering & Research Portfolio</title>
+  <title>Cecilia Martinez Rodriguez</title>
   <style>
     /* =========================================================
        RADIANT THEME (DARK MODE, GLOWS & GLASSMORPHISM)
        ========================================================= */
     :root {
-      --bg-dark: #0a0d14;
-      --card-bg: rgba(18, 24, 38, 0.7);
-      --border-glow: rgba(56, 189, 248, 0.2);
-      --border-hover: rgba(56, 189, 248, 0.6);
-      
-      /* Radiant Accent Colors */
-      --cyan-glow: #06b6d4;
-      --violet-glow: #8b5cf6;
-      --pink-glow: #ec4899;
-      
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --text-subtle: #6b7280;
-      
+      --bg-dark: #f7f8f2;
+      --card-bg: rgba(255, 255, 255, 0.75);
+      --border-glow: rgba(107, 142, 90, 0.25);
+      --border-hover: rgba(79, 107, 69, 0.55);
+
+      --cyan-glow: #6b8e5a;
+      --violet-glow: #4f6b45;
+      --pink-glow: #d98e73;
+
+      --text-main: #2f3b28;
+      --text-muted: #5c6b52;
+      --text-subtle: #798a70;
+
       --max-width: 1200px;
       --radius: 16px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
       background-color: var(--bg-dark);
-      /* Radiant Radial Background Effect */
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 50% 90%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(107, 142, 90, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(217, 142, 115, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(79, 107, 69, 0.10) 0%, transparent 50%);
       background-attachment: fixed;
       color: var(--text-main);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
 
-    /* Radiant Glass Navbar */
+    /* Navbar */
     .navbar {
-      background: rgba(10, 13, 20, 0.8);
+      background: rgba(247, 248, 242, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-glow);
@@ -73,21 +60,18 @@
       justify-content: space-between;
       align-items: center;
       height: 70px;
+      flex-wrap: wrap;
     }
 
     .brand {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 700;
       background: linear-gradient(135deg, var(--cyan-glow), var(--violet-glow));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
 
     .nav-links a {
       font-size: 0.95rem;
@@ -98,37 +82,31 @@
 
     .nav-links a:hover {
       color: var(--cyan-glow);
-      text-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+      text-shadow: 0 0 8px rgba(107, 142, 90, 0.35);
     }
 
-    /* Hero Section */
-    .hero {
-      padding: 5rem 0 3rem;
-      text-align: center;
-    }
+    /* Hero */
+    .hero { padding: 5rem 0 3rem; text-align: center; }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.75rem;
       font-weight: 800;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #ffffff 30%, var(--cyan-glow));
+      background: linear-gradient(135deg, #2f3b28 30%, var(--cyan-glow));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
       max-width: 650px;
       margin: 0 auto;
     }
 
-    /* About Me Section */
-    .about-section {
-      padding: 3rem 0 4rem;
-      border-bottom: 1px solid var(--border-glow);
-    }
+    /* About Me */
+    .about-section { padding: 3rem 0 4rem; border-bottom: 1px solid var(--border-glow); }
 
     .about-card {
       background: var(--card-bg);
@@ -140,7 +118,7 @@
       grid-template-columns: 220px 1fr;
       gap: 2.5rem;
       align-items: center;
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 30px -10px rgba(79, 107, 69, 0.15);
     }
 
     .about-avatar {
@@ -149,48 +127,48 @@
       border-radius: 12px;
       object-fit: cover;
       border: 2px solid var(--cyan-glow);
-      box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+      box-shadow: 0 0 20px rgba(107, 142, 90, 0.2);
     }
 
-    .about-text h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #fff;
+    .about-text h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #2f3b28; }
+    .about-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 1.05rem; }
+
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .about-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(79, 107, 69, 0.10);
+      color: #4f6b45;
+      border: 1px solid rgba(79, 107, 69, 0.25);
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
     }
 
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
-    }
+    /* Generic Section */
+    .portfolio-section { padding: 4rem 0; border-bottom: 1px solid var(--border-glow); }
 
-    /* Generic Section Styles */
-    .portfolio-section {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--border-glow);
-    }
+    .section-header { margin-bottom: 2rem; }
+    .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: #2f3b28; }
+    .section-lead { font-size: 1.05rem; color: var(--text-muted); max-width: 650px; }
 
-    .section-header {
-      margin-bottom: 2.5rem;
-    }
-
-    .section-header h2 {
-      font-size: 2rem;
+    /* Subsection groupings (e.g. "SolidWorks Design Concepts" within Engineering Projects) */
+    .subsection { margin-top: 2.5rem; }
+    .subsection-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #fff;
+      color: var(--cyan-glow);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed var(--border-glow);
     }
 
-    .section-lead {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 600px;
-    }
-
-    /* Card Grid & Glass Cards */
+    /* Card Grid */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
@@ -204,87 +182,59 @@
       flex-direction: column;
       justify-content: space-between;
       transition: all 0.3s ease;
+      scroll-margin-top: 90px;
     }
 
     .item-card:hover {
       transform: translateY(-6px);
       border-color: var(--border-hover);
-      box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.25);
+      box-shadow: 0 12px 30px -10px rgba(107, 142, 90, 0.2);
     }
 
-    /* Image Containers inside cards */
     .card-image-wrapper {
       position: relative;
       width: 100%;
-      height: 200px;
-      background-color: rgba(255, 255, 255, 0.03);
+      height: 190px;
+      background-color: rgba(107, 142, 90, 0.05);
       overflow: hidden;
       border-bottom: 1px solid var(--border-glow);
       cursor: pointer;
     }
 
-    .card-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
+    .card-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .item-card:hover .card-image { transform: scale(1.05); }
 
-    .item-card:hover .card-image {
-      transform: scale(1.05);
-    }
-
-    .card-body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
+    .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
 
     .card-tag {
       align-self: flex-start;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      background: rgba(6, 182, 212, 0.15);
+      background: rgba(107, 142, 90, 0.12);
       color: var(--cyan-glow);
-      border: 1px solid rgba(6, 182, 212, 0.3);
+      border: 1px solid rgba(107, 142, 90, 0.3);
       padding: 0.25rem 0.6rem;
       border-radius: 6px;
       margin-bottom: 0.85rem;
     }
 
-    .card-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: #fff;
-    }
+    .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem; color: #2f3b28; }
+    .card-description { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1rem; }
 
-    .card-description {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-    }
+    .card-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.82rem; color: var(--text-subtle); margin-bottom: 1.1rem; }
 
-    .card-meta {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: var(--text-subtle);
-      margin-bottom: 1.25rem;
-    }
+    .card-actions { display: flex; flex-direction: column; gap: 0.6rem; }
 
     .card-button {
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
+      background: linear-gradient(135deg, rgba(107, 142, 90, 0.18), rgba(79, 107, 69, 0.18));
       border: 1px solid var(--cyan-glow);
-      color: #fff;
+      color: #2f3b28;
       padding: 0.6rem 1rem;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       cursor: pointer;
       text-align: center;
       transition: all 0.2s ease;
@@ -294,11 +244,44 @@
 
     .card-button:hover {
       background: linear-gradient(135deg, var(--cyan-glow), var(--violet-glow));
-      box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+      box-shadow: 0 0 15px rgba(107, 142, 90, 0.3);
       border-color: transparent;
     }
 
-    /* Relevant Coursework Styling */
+    .card-button.secondary {
+      background: transparent;
+      border: 1px solid rgba(79, 107, 69, 0.2);
+      color: var(--text-muted);
+    }
+    .card-button.secondary:hover {
+      border-color: var(--violet-glow);
+      color: #2f3b28;
+      box-shadow: 0 0 15px rgba(79, 107, 69, 0.25);
+    }
+
+    .card-button.disabled {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+      border-style: dashed;
+    }
+
+    .card-note {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+
+    .back-link {
+      font-size: 0.85rem;
+      color: var(--violet-glow);
+      display: inline-block;
+      margin-top: 0.75rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* Relevant Coursework */
     .coursework-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -313,39 +296,27 @@
       padding: 1.5rem;
     }
 
-    .coursework-category h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
+    .coursework-category h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: #2f3b28; }
 
-    .course-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-    }
+    .course-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
 
     .course-badge {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(107, 142, 90, 0.07);
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       font-weight: 500;
       padding: 0.4rem 0.75rem;
       border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(107, 142, 90, 0.15);
     }
 
-    /* Modal / Lightbox Overlay for Viewing Posters & Images */
+    /* Modal / Lightbox for images (photos, not PDFs) */
     .modal-overlay {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(5, 7, 12, 0.9);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(47, 59, 40, 0.45);
       backdrop-filter: blur(8px);
       z-index: 1000;
       justify-content: center;
@@ -353,9 +324,7 @@
       padding: 2rem;
     }
 
-    .modal-overlay.active {
-      display: flex;
-    }
+    .modal-overlay.active { display: flex; }
 
     .modal-content {
       background: var(--bg-dark);
@@ -367,48 +336,26 @@
       overflow-y: auto;
       padding: 2rem;
       position: relative;
-      box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+      box-shadow: 0 0 30px rgba(107, 142, 90, 0.25);
     }
 
     .modal-close {
       position: absolute;
-      top: 1rem;
-      right: 1.5rem;
+      top: 1rem; right: 1.5rem;
       font-size: 1.8rem;
       color: var(--text-muted);
       cursor: pointer;
     }
+    .modal-close:hover { color: var(--cyan-glow); }
 
-    .modal-close:hover {
-      color: var(--cyan-glow);
-    }
+    .modal-img { width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; border: 1px solid var(--border-glow); }
 
-    .modal-img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-top: 1rem;
-      border: 1px solid var(--border-glow);
-    }
-
-    /* Footer */
-    footer {
-      padding: 2.5rem 0;
-      text-align: center;
-      color: var(--text-subtle);
-      font-size: 0.9rem;
-    }
+    footer { padding: 2.5rem 0; text-align: center; color: var(--text-subtle); font-size: 0.9rem; }
 
     @media (max-width: 768px) {
-      .about-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .about-avatar {
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
-      }
+      .about-card { grid-template-columns: 1fr; text-align: center; }
+      .about-avatar { width: 160px; height: 160px; margin: 0 auto; }
+      .nav-links { gap: 1rem; font-size: 0.85rem; }
     }
   </style>
 </head>
@@ -427,30 +374,37 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header class="hero">
     <div class="container">
-      <h1>Engineering & Science Showcase</h1>
-      <p>Mechanical engineering design, hands-on manufacturing, high-energy astrophysics research, and clean energy advocacy.</p>
+      <h1>Cecilia Martinez Rodriguez</h1>
+      <p>CAD design, hands-on manufacturing, high-energy astrophysics research, and clean energy advocacy — the work behind the resume.</p>
     </div>
   </header>
 
   <main>
 
-    <!-- ABOUT ME SECTION -->
+    <!-- ABOUT ME -->
     <section id="about" class="about-section">
       <div class="container">
         <div class="about-card">
-          <!-- Replace profile.jpg with your headshot image path -->
-          <img src="profile.jpg" alt="Profile Picture" class="about-avatar" onclick="openModal('About Me', 'profile.jpg', 'Headshot photo.')" />
+          <!-- Uses images/ProfilePhoto.jpg from your repo -->
+          <img src="images/ProfilePhoto.jpg" alt="Cecilia Martinez Rodriguez" class="about-avatar" onclick="openModal('About Me', 'images/ProfilePhoto.jpg', 'Profile photo.')" />
           <div class="about-text">
             <h2>About Me</h2>
             <p>
-              Welcome to my portfolio! I am a Mechanical Engineering researcher and designer with a strong background in CAD modeling, hardware prototyping, high-energy astrophysics data analysis, and clean energy advocacy.
+              I started college as an astrophysics major, chasing questions about the universe. Somewhere along the way, I realized the impact I wanted to make was closer to home — on Earth. Growing up with a Puerto Rican family gave me a front-row seat to what unreliable energy infrastructure actually costs a community, and that's what pulled me toward mechanical engineering.
             </p>
             <p>
-              Explore my interactive CAD concepts, physical manufacturing documentation, research presentations, and published papers below. Click on any item or image to view technical posters, blueprints, and high-resolution media.
+              I'm now a Mechanical Engineering and Physics student at Barnard College / Columbia University SEAS (4+1 B.A./M.S. program), still holding onto that early love of research while building toward a career in reliable energy and sustainability. That thread runs through everything here — from CAD design and manufacturing, to my work with the Building Energy Research Lab, to helping bring off-grid solar to communities in Puerto Rico with Let's Share the Sun.
             </p>
+            <div class="about-tags">
+              <span class="about-tag">SolidWorks</span>
+              <span class="about-tag">ANSYS / FEA</span>
+              <span class="about-tag">Python</span>
+              <span class="about-tag">Energy & Sustainability</span>
+              <span class="about-tag">Building Energy Modeling</span>
+            </div>
           </div>
         </div>
       </div>
@@ -461,58 +415,111 @@
       <div class="container">
         <header class="section-header">
           <h2>Engineering Projects</h2>
-          <p class="section-lead">3D CAD modeling, FEA analysis, and physical prototyping.</p>
+          <p class="section-lead">Parametric CAD design and physical prototyping, from concept to finished part.</p>
         </header>
 
-        <div class="card-grid">
-          
-          <!-- Card 1: SolidWorks Concepts -->
-          <article class="item-card">
-            <div class="card-image-wrapper" onclick="openModal('SolidWorks Concepts', 'images/solidworks-render.jpg', 'Detailed CAD render of assembly models and stress analysis.')">
-              <!-- Replace src with your image path (e.g. images/solidworks-concept.jpg) -->
-              <img src="images/solidworks-concept.jpg" alt="SolidWorks CAD Concept" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/121826/06b6d4?text=SolidWorks+3D+Render';" />
-            </div>
-            <div class="card-body">
-              <div>
-                <div class="card-tag">CAD & Design</div>
-                <h3 class="card-title">SolidWorks Concepts</h3>
-                <p class="card-description">
-                  Parametric 3D CAD modeling, multi-part assembly design, finite element analysis (FEA), and GD&T drafting.
-                </p>
-              </div>
-              <div>
-                <div class="card-meta">
-                  <span>🛠️ SolidWorks / FEA</span>
-                </div>
-                <button class="card-button" onclick="openModal('SolidWorks Concepts', 'images/solidworks-render.jpg', 'Complete CAD assembly renders and FEA stress distribution maps.')">View Models & Renders</button>
-              </div>
-            </div>
-          </article>
+        <!-- SUBSECTION: SolidWorks Design Concepts -->
+        <div class="subsection">
+          <h3 class="subsection-title">🛠️ SolidWorks Design Concepts</h3>
+          <div class="card-grid">
 
-          <!-- Card 2: Manufacturing -->
-          <article class="item-card">
-            <div class="card-image-wrapper" onclick="openModal('Manufacturing', 'images/manufacturing-photo.jpg', 'Machined component physical prototype and CNC setup.')">
-              <!-- Replace src with your image path (e.g. images/manufacturing.jpg) -->
-              <img src="images/manufacturing.jpg" alt="Manufacturing & Machining" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/121826/8b5cf6?text=Manufacturing+%26+Machining';" />
-            </div>
-            <div class="card-body">
-              <div>
-                <div class="card-tag">Fabrication & Machining</div>
-                <h3 class="card-title">Manufacturing</h3>
-                <p class="card-description">
-                  Physical prototyping detailing CNC milling, manual lathe machining, 3D printing, and Design for Manufacturability (DFM).
-                </p>
+            <!-- 1. Reverse Engineered Toy Helicopter -->
+            <article class="item-card">
+              <div class="card-image-wrapper" onclick="openModal('Reverse Engineered Toy Helicopter', 'images/helicopter-render.jpg', 'CAD renders and measured drawings from the reverse-engineering process.')">
+                <!-- TODO: add images/helicopter-render.jpg -->
+                <img src="images/helicopter-render.jpg" alt="Reverse Engineered Toy Helicopter CAD" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/6b8e5a?text=Add+Photo%3A+helicopter-render.jpg';" />
               </div>
-              <div>
-                <div class="card-meta">
-                  <span>⚙️ CNC / Lathe / 3D Print</span>
+              <div class="card-body">
+                <div>
+                  <div class="card-tag">CAD & Design</div>
+                  <h3 class="card-title">Reverse Engineered Toy Helicopter</h3>
+                  <p class="card-description">Full teardown and parametric reconstruction of a toy helicopter assembly, including measured drawings and reverse-engineered part geometry.</p>
                 </div>
-                <button class="card-button" onclick="openModal('Manufacturing Documentation', 'images/manufacturing-photo.jpg', 'Fabrication shop setup, CNC path generation, and finished part inspection.')">View Parts & Shop Docs</button>
+                <div>
+                  <div class="card-meta"><span>SolidWorks</span></div>
+                  <div class="card-actions">
+                    <!-- TODO: replace with link to your report/renders PDF, e.g. images/helicopter-report.pdf -->
+                    <button class="card-button" onclick="openModal('Reverse Engineered Toy Helicopter', 'images/helicopter-render.jpg', 'CAD renders and measured drawings from the reverse-engineering process.')">View Renders</button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
+            <!-- 2. 1930s Toy Racecars (Bugatti + Alfa Romeo) -->
+            <article class="item-card" id="solidworks-racecar">
+              <div class="card-image-wrapper" onclick="openModal('1930s Toy Racecars', 'images/racecar-render.jpg', 'CAD assembly renders for the Bugatti and Alfa Romeo toy racecar models.')">
+                <!-- TODO: add images/racecar-render.jpg -->
+                <img src="images/racecar-render.jpg" alt="1930s Toy Racecars CAD" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/6b8e5a?text=Add+Photo%3A+racecar-render.jpg';" />
+              </div>
+              <div class="card-body">
+                <div>
+                  <div class="card-tag">CAD & Design</div>
+                  <h3 class="card-title">1930s Toy Racecars (Bugatti + Alfa Romeo)</h3>
+                  <p class="card-description">Parametric assembly design of two 1930s-era toy racecars, modeled after the Bugatti and Alfa Romeo. The Bugatti design was later manufactured — see below.</p>
+                </div>
+                <div>
+                  <div class="card-meta"><span>SolidWorks</span></div>
+                  <div class="card-actions">
+                    <button class="card-button" onclick="openModal('1930s Toy Racecars', 'images/racecar-render.jpg', 'CAD assembly renders for the Bugatti and Alfa Romeo toy racecar models.')">View Renders</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. Adding and Subtracting Mechanical Learning Aid -->
+            <article class="item-card">
+              <div class="card-image-wrapper" onclick="openModal('Adding & Subtracting Mechanical Learning Aid', 'images/learning-aid-render.jpg', 'CAD renders of the mechanical learning aid assembly.')">
+                <!-- TODO: add images/learning-aid-render.jpg -->
+                <img src="images/learning-aid-render.jpg" alt="Adding and Subtracting Mechanical Learning Aid CAD" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/6b8e5a?text=Add+Photo%3A+learning-aid-render.jpg';" />
+              </div>
+              <div class="card-body">
+                <div>
+                  <div class="card-tag">CAD & Design</div>
+                  <h3 class="card-title">Adding & Subtracting Mechanical Learning Aid</h3>
+                  <p class="card-description">Mechanical teaching tool designed to demonstrate addition and subtraction through a hands-on, gear- or linkage-driven mechanism.</p>
+                </div>
+                <div>
+                  <div class="card-meta"><span>SolidWorks</span></div>
+                  <div class="card-actions">
+                    <button class="card-button" onclick="openModal('Adding & Subtracting Mechanical Learning Aid', 'images/learning-aid-render.jpg', 'CAD renders of the mechanical learning aid assembly.')">View Renders</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
         </div>
+
+        <!-- SUBSECTION: Manufacturing -->
+        <div class="subsection">
+          <h3 class="subsection-title">⚙️ Manufacturing</h3>
+          <div class="card-grid">
+
+            <!-- 1. 1930s Toy Racecar (Bugatti) - Manufacturing -->
+            <article class="item-card">
+              <div class="card-image-wrapper" onclick="openModal('1930s Toy Racecar (Bugatti) — Manufacturing', 'images/racecar-manufacturing.jpg', 'Machining and assembly photos of the finished Bugatti racecar build.')">
+                <!-- TODO: add images/racecar-manufacturing.jpg -->
+                <img src="images/racecar-manufacturing.jpg" alt="1930s Toy Racecar Bugatti Manufacturing" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/4f6b45?text=Add+Photo%3A+racecar-manufacturing.jpg';" />
+              </div>
+              <div class="card-body">
+                <div>
+                  <div class="card-tag">Fabrication & Machining</div>
+                  <h3 class="card-title">1930s Toy Racecar (Bugatti)</h3>
+                  <p class="card-description">Physical build of the Bugatti racecar from CAD to finished part — machining, assembly, and fit-up documentation.</p>
+                </div>
+                <div>
+                  <div class="card-meta"><span>CNC / Machining</span></div>
+                  <div class="card-actions">
+                    <button class="card-button" onclick="openModal('1930s Toy Racecar (Bugatti) — Manufacturing', 'images/racecar-manufacturing.jpg', 'Machining and assembly photos of the finished Bugatti racecar build.')">View Build Photos</button>
+                  </div>
+                  <a href="#solidworks-racecar" class="back-link">← Back to the SolidWorks design</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -521,76 +528,77 @@
       <div class="container">
         <header class="section-header">
           <h2>Presentations & Writing</h2>
-          <p class="section-lead">Astrophysics research, lab analysis, and non-profit advocacy publications.</p>
+          <p class="section-lead">Astrophysics research, energy lab work, and non-profit writing.</p>
         </header>
 
         <div class="card-grid">
-          
-          <!-- Card 1: VERITAS -->
+
+          <!-- VERITAS -->
           <article class="item-card">
-            <div class="card-image-wrapper" onclick="openModal('VERITAS Research Poster', 'images/veritas-poster.jpg', 'High-resolution research poster for ground-based gamma-ray astronomy analysis.')">
-              <!-- Replace src with your image path (e.g. images/veritas.jpg) -->
-              <img src="images/veritas.jpg" alt="VERITAS Poster Thumbnail" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/121826/06b6d4?text=VERITAS+Research+Poster';" />
+            <div class="card-image-wrapper" onclick="openModal('VERITAS', 'images/veritas-cover.jpg', 'High-energy astrophysics research on the blazar B2 1811+31, VERITAS/CTA group.')">
+              <!-- TODO: add images/veritas-cover.jpg (optional cover image) -->
+              <img src="images/veritas-cover.jpg" alt="VERITAS Research" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/6b8e5a?text=VERITAS';" />
             </div>
             <div class="card-body">
               <div>
                 <div class="card-tag">Research & Analysis</div>
                 <h3 class="card-title">VERITAS</h3>
-                <p class="card-description">
-                  Data analysis and observational findings on high-energy astrophysics using ground-based gamma-ray telescopes.
-                </p>
+                <p class="card-description">High-energy astrophysics research under Prof. Reshmi Mukherjee (Barnard/VERITAS/CTA), analyzing the blazar B2 1811+31.</p>
               </div>
               <div>
-                <div class="card-meta">
-                  <span>📍 Presentation / Paper</span>
+                <div class="card-meta"><span>SRI 2023–2026</span></div>
+                <div class="card-actions">
+                  <a href="images/2023_VERITAS_SRI_Poster.pdf" target="_blank" rel="noopener" class="card-button">2023 SRI Poster (PDF)</a>
+                  <a href="images/2024_SRI_VERITAS_Poster.pdf" target="_blank" rel="noopener" class="card-button">2024 SRI Poster (PDF)</a>
+                  <!-- TODO: add images/2026-senior-presentation.pdf -->
+                  <a href="images/2026-senior-presentation.pdf" target="_blank" rel="noopener" class="card-button secondary">2026 Senior Presentation (Slides)</a>
+                  <p class="card-note">Manuscript on the B2 1811+31 flare event in progress.</p>
                 </div>
-                <button class="card-button" onclick="openModal('VERITAS Research Poster', 'images/veritas-poster.jpg', 'Full observational poster detailing computational methodologies and gamma-ray detection spectrum.')">View Poster & Paper</button>
               </div>
             </div>
           </article>
 
-          <!-- Card 2: BERL -->
+          <!-- BERL -->
           <article class="item-card">
-            <div class="card-image-wrapper" onclick="openModal('BERL Technical Report', 'images/berl-report-cover.jpg', 'Behavioral & Energy Research Lab study documentation.')">
-              <!-- Replace src with your image path (e.g. images/berl.jpg) -->
-              <img src="images/berl.jpg" alt="BERL Report Cover" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/121826/8b5cf6?text=BERL+Lab+Report';" />
+            <div class="card-image-wrapper" onclick="openModal('BERL', 'images/berl-cover.jpg', 'Building Energy Research Lab poster, 2025.')">
+              <!-- TODO: add images/berl-cover.jpg (optional cover image) -->
+              <img src="images/berl-cover.jpg" alt="BERL Research" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/4f6b45?text=BERL';" />
             </div>
             <div class="card-body">
               <div>
-                <div class="card-tag">Technical Report</div>
+                <div class="card-tag">Research & Analysis</div>
                 <h3 class="card-title">BERL</h3>
-                <p class="card-description">
-                  Investigative study for the Behavioral & Energy Research Lab on energy efficiency strategies and user behavior modeling.
-                </p>
+                <p class="card-description">Building Energy Research Lab at Columbia SEAS — modeling HVAC filtration impacts and integrating health outcomes into decarbonization planning.</p>
               </div>
               <div>
-                <div class="card-meta">
-                  <span>📍 Lab Report / Study</span>
+                <div class="card-meta"><span>SRI 2025</span></div>
+                <div class="card-actions">
+                  <a href="images/2025_SRI_BERL_Poster.pdf" target="_blank" rel="noopener" class="card-button">2025 SRI Poster (PDF)</a>
                 </div>
-                <button class="card-button" onclick="openModal('BERL Lab Report', 'images/berl-report-cover.jpg', 'Complete investigative report on energy usage metrics and behavioral efficiency.')">View Lab Report</button>
               </div>
             </div>
           </article>
 
-          <!-- Card 3: Let's Share the Sun -->
+          <!-- Let's Share the Sun -->
           <article class="item-card">
-            <div class="card-image-wrapper" onclick="openModal('Let\'s Share the Sun Advocacy', 'images/share-the-sun.jpg', 'Keynote presentation and field photos from solar equity initiative.')">
-              <!-- Replace src with your image path (e.g. images/share-sun.jpg) -->
-              <img src="images/share-sun.jpg" alt="Let's Share the Sun Field Work" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/121826/ec4899?text=Let%27s+Share+The+Sun';" />
+            <div class="card-image-wrapper" onclick="openModal('Let\'s Share the Sun', 'images/lsts-cover.jpg', 'Impact report and website work for Let\'s Share the Sun Foundation.')">
+              <!-- TODO: add images/lsts-cover.jpg (optional cover image) -->
+              <img src="images/lsts-cover.jpg" alt="Let's Share the Sun" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/d98e73?text=Lets+Share+the+Sun';" />
             </div>
             <div class="card-body">
               <div>
-                <div class="card-tag">Non-Profit & Advocacy</div>
+                <div class="card-tag">Non-Profit & Writing</div>
                 <h3 class="card-title">Let's Share the Sun</h3>
-                <p class="card-description">
-                  Articles and keynote presentations advocating for solar energy equity and installations in underserved communities.
-                </p>
+                <p class="card-description">Authored LSTS' inaugural Impact Report and redesigned the foundation's official website, supporting off-grid solar work in Adjuntas, Puerto Rico.</p>
               </div>
               <div>
-                <div class="card-meta">
-                  <span>📍 Keynote & Article</span>
+                <div class="card-meta"><span>Summer 2026</span></div>
+                <div class="card-actions">
+                  <!-- TODO: add images/LSTS-Impact-Report.pdf -->
+                  <a href="images/LSTS-Impact-Report.pdf" target="_blank" rel="noopener" class="card-button">Impact Report (PDF)</a>
+                  <!-- TODO: replace # with the live LSTS website once your updates are published -->
+                  <a href="#" class="card-button secondary disabled">Website (link coming soon)</a>
                 </div>
-                <button class="card-button" onclick="openModal('Let\'s Share the Sun Advocacy', 'images/share-the-sun.jpg', 'Keynote presentation slides and published articles detailing international solar installations.')">View Keynote & Article</button>
               </div>
             </div>
           </article>
@@ -604,41 +612,50 @@
       <div class="container">
         <header class="section-header">
           <h2>Relevant Coursework</h2>
-          <p class="section-lead">Core engineering concepts, materials science, thermodynamics, and analysis tools.</p>
+          <p class="section-lead">Core physics, math, and engineering coursework from the B.A./M.S. program.</p>
         </header>
 
         <div class="coursework-grid">
-          
+
           <div class="coursework-category">
-            <h3>Mechanical Design & Mechanics</h3>
+            <h3>Physics Core</h3>
             <ul class="course-list">
-              <li class="course-badge">Computer-Aided Design (CAD)</li>
-              <li class="course-badge">Statics & Dynamics</li>
-              <li class="course-badge">Mechanics of Materials</li>
-              <li class="course-badge">Machine Component Design</li>
-              <li class="course-badge">Kinematics of Machinery</li>
+              <li class="course-badge">Classical Mechanics (Newtonian + Lagrangian)</li>
+              <li class="course-badge">Electricity and Magnetism</li>
+              <li class="course-badge">Classical Waves</li>
+              <li class="course-badge">Quantum Physics</li>
             </ul>
           </div>
 
           <div class="coursework-category">
-            <h3>Thermal & Materials Science</h3>
+            <h3>Mathematics</h3>
             <ul class="course-list">
-              <li class="course-badge">Thermodynamics</li>
+              <li class="course-badge">Calculus I–IV</li>
+              <li class="course-badge">Linear Algebra</li>
+              <li class="course-badge">Ordinary Differential Equations</li>
+            </ul>
+          </div>
+
+          <div class="coursework-category">
+            <h3>Engineering</h3>
+            <ul class="course-list">
+              <li class="course-badge">Electronics Lab</li>
+              <li class="course-badge">Mechanics of Solids</li>
               <li class="course-badge">Fluid Mechanics</li>
+              <li class="course-badge">Intro to Control Systems</li>
               <li class="course-badge">Heat Transfer</li>
-              <li class="course-badge">Engineering Materials Science</li>
-              <li class="course-badge">Manufacturing Processes</li>
+              <li class="course-badge">Materials and Processes Manufacturing</li>
+              <li class="course-badge">Computer Graphics and Design</li>
             </ul>
           </div>
 
           <div class="coursework-category">
-            <h3>Analysis & Systems</h3>
+            <h3>Energy & Atmospheric Systems</h3>
             <ul class="course-list">
-              <li class="course-badge">Finite Element Analysis (FEA)</li>
-              <li class="course-badge">Control Systems & Mechatronics</li>
-              <li class="course-badge">Computational Fluid Dynamics (CFD)</li>
-              <li class="course-badge">Numerical Methods</li>
-              <li class="course-badge">Differential Equations</li>
+              <li class="course-badge">Decarbonizing Buildings Studio</li>
+              <li class="course-badge">Alternative Energy Resources</li>
+              <li class="course-badge">Building Energy Modeling and Simulation</li>
+              <li class="course-badge">Intro to Atmospheric Science</li>
             </ul>
           </div>
 
@@ -648,34 +665,31 @@
 
   </main>
 
-  <!-- LIGHTBOX / MODAL SYSTEM FOR POSTERS & MEDIA -->
+  <!-- LIGHTBOX / MODAL SYSTEM (for photos, not PDFs) -->
   <div id="mediaModal" class="modal-overlay" onclick="closeModalOnOuterClick(event)">
     <div class="modal-content">
       <span class="modal-close" onclick="closeModal()">&times;</span>
-      <h2 id="modalTitle" style="color: #fff; margin-bottom: 0.5rem;"></h2>
+      <h2 id="modalTitle" style="color: #2f3b28; margin-bottom: 0.5rem;"></h2>
       <p id="modalDesc" style="color: var(--text-muted);"></p>
-      <img id="modalImg" src="" alt="Project Poster View" class="modal-img" />
+      <img id="modalImg" src="" alt="Project view" class="modal-img" />
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Portfolio. Built with Radiant Design.</p>
+      <p>&copy; 2026 Cecilia Martinez Rodriguez. Portfolio built to complement my resume.</p>
     </div>
   </footer>
 
-  <!-- Lightbox Script -->
   <script>
     function openModal(title, imageSrc, description) {
       document.getElementById('modalTitle').innerText = title;
       document.getElementById('modalDesc').innerText = description;
-      
-      // Fallback placeholder image if local file path is missing
+
       const modalImg = document.getElementById('modalImg');
       modalImg.src = imageSrc;
       modalImg.onerror = function() {
-        this.src = 'https://via.placeholder.com/900x600/121826/06b6d4?text=' + encodeURIComponent(title + ' Full View / Poster');
+        this.src = 'https://via.placeholder.com/900x600/eef1e6/6b8e5a?text=' + encodeURIComponent('Add photo for: ' + title);
       };
 
       document.getElementById('mediaModal').classList.add('active');
