@@ -227,6 +227,22 @@
 
     .card-actions { display: flex; flex-direction: column; gap: 0.6rem; }
 
+    .mini-gallery { display: flex; gap: 0.5rem; margin-top: 0.85rem; }
+    .mini-gallery img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border-glow);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .mini-gallery img:hover {
+      border-color: var(--border-hover);
+      transform: scale(1.08);
+      box-shadow: 0 4px 10px -4px rgba(107, 142, 90, 0.35);
+    }
+
     .card-button {
       background: linear-gradient(135deg, rgba(107, 142, 90, 0.18), rgba(79, 107, 69, 0.18));
       border: 1px solid var(--cyan-glow);
@@ -445,43 +461,77 @@
               </div>
             </article>
 
-            <!-- 2. 1930s Toy Racecars (Bugatti + Alfa Romeo) -->
-            <article class="item-card" id="solidworks-racecar">
-              <div class="card-image-wrapper" onclick="openModal('1930s Toy Racecars', 'images/racecar-render.jpg', 'CAD assembly renders for the Bugatti and Alfa Romeo toy racecar models.')">
-                <!-- TODO: add images/racecar-render.jpg -->
-                <img src="images/racecar-render.jpg" alt="1930s Toy Racecars CAD" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/6b8e5a?text=Add+Photo%3A+racecar-render.jpg';" />
+            <!-- 2. Bugatti Type 51 (1931) -->
+            <article class="item-card" id="solidworks-bugatti">
+              <div class="card-image-wrapper" onclick="openModal('Bugatti Type 51 (1931)', 'images/racecar-render.jpg', 'CAD assembly render of the Bugatti Type 51 toy racecar body, designed for silicone-mold casting.')">
+                <img src="images/racecar-render.jpg" alt="Bugatti Type 51 CAD Render" class="card-image" />
               </div>
               <div class="card-body">
                 <div>
                   <div class="card-tag">CAD & Design</div>
-                  <h3 class="card-title">1930s Toy Racecars (Bugatti + Alfa Romeo)</h3>
-                  <p class="card-description">Parametric assembly design of two 1930s-era toy racecars, modeled after the Bugatti and Alfa Romeo. The Bugatti design was later manufactured — see below.</p>
+                  <h3 class="card-title">Bugatti Type 51 (1931)</h3>
+                  <p class="card-description">Parametric four-part assembly (body, cockpit, axle holders, wheels) modeled to scale from period blueprints, as part of a team manufacturing project. This design was carried through to a physical build — see Manufacturing below.</p>
+                  <div class="mini-gallery">
+                    <img src="images/bugatti-cockpit-render.jpg" alt="Bugatti cockpit render" onclick="event.stopPropagation(); openModal('Bugatti Type 51 — Cockpit', 'images/bugatti-cockpit-render.jpg', 'Cockpit component render.')" />
+                    <img src="images/bugatti-wheel-render.jpg" alt="Bugatti wheel render" onclick="event.stopPropagation(); openModal('Bugatti Type 51 — Wheel', 'images/bugatti-wheel-render.jpg', 'Wheel component, designed for injection molding.')" />
+                  </div>
                 </div>
                 <div>
-                  <div class="card-meta"><span>SolidWorks</span></div>
+                  <div class="card-meta"><span>SolidWorks · Team 17</span></div>
                   <div class="card-actions">
-                    <button class="card-button" onclick="openModal('1930s Toy Racecars', 'images/racecar-render.jpg', 'CAD assembly renders for the Bugatti and Alfa Romeo toy racecar models.')">View Renders</button>
+                    <button class="card-button" onclick="openModal('Bugatti Type 51 (1931)', 'images/racecar-render.jpg', 'CAD assembly render of the Bugatti Type 51 toy racecar body, designed for silicone-mold casting.')">View Renders</button>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- 3. Adding and Subtracting Mechanical Learning Aid -->
+            <!-- 3. Alfa Romeo P2 (1924) -->
             <article class="item-card">
-              <div class="card-image-wrapper" onclick="openModal('Adding & Subtracting Mechanical Learning Aid', 'images/learning-aid-render.jpg', 'CAD renders of the mechanical learning aid assembly.')">
-                <!-- TODO: add images/learning-aid-render.jpg -->
-                <img src="images/learning-aid-render.jpg" alt="Adding and Subtracting Mechanical Learning Aid CAD" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/6b8e5a?text=Add+Photo%3A+learning-aid-render.jpg';" />
+              <div class="card-image-wrapper" onclick="openModal('Alfa Romeo P2 (1924)', 'images/alfa-romeo-render.jpg', 'Full CAD assembly render of the scaled Alfa Romeo P2 toy racecar.')">
+                <img src="images/alfa-romeo-render.jpg" alt="Alfa Romeo P2 CAD Render" class="card-image" />
               </div>
               <div class="card-body">
                 <div>
                   <div class="card-tag">CAD & Design</div>
-                  <h3 class="card-title">Adding & Subtracting Mechanical Learning Aid</h3>
-                  <p class="card-description">Mechanical teaching tool designed to demonstrate addition and subtraction through a hands-on, gear- or linkage-driven mechanism.</p>
+                  <h3 class="card-title">Alfa Romeo P2 (1924)</h3>
+                  <p class="card-description">Individual term project: a 1:24 scale model of the 1924 Alfa Romeo P2, designed alongside a full manufacturing plan — sand-cast aluminum body, water-jet chassis, and an injection-molded wheel with complete tooling, shrinkage, and cycle-time calculations.</p>
+                  <div class="mini-gallery">
+                    <img src="images/alfa-romeo-body-render.jpg" alt="Alfa Romeo body render" onclick="event.stopPropagation(); openModal('Alfa Romeo P2 — Body', 'images/alfa-romeo-body-render.jpg', 'Car body pattern, designed for sand casting.')" />
+                    <img src="images/alfa-romeo-wheel-render.jpg" alt="Alfa Romeo wheel render" onclick="event.stopPropagation(); openModal('Alfa Romeo P2 — Wheel', 'images/alfa-romeo-wheel-render.jpg', 'Wheel, designed for injection molding.')" />
+                  </div>
                 </div>
                 <div>
-                  <div class="card-meta"><span>SolidWorks</span></div>
+                  <div class="card-meta"><span>SolidWorks · MECE E3610</span></div>
                   <div class="card-actions">
-                    <button class="card-button" onclick="openModal('Adding & Subtracting Mechanical Learning Aid', 'images/learning-aid-render.jpg', 'CAD renders of the mechanical learning aid assembly.')">View Renders</button>
+                    <button class="card-button" onclick="openModal('Alfa Romeo P2 (1924)', 'images/alfa-romeo-render.jpg', 'Full CAD assembly render of the scaled Alfa Romeo P2 toy racecar.')">View Renders</button>
+                    <a href="images/Alfa-Romeo-P2-Design-and-Manufacturing-Plan.pdf" target="_blank" rel="noopener" class="card-button secondary">Read the Full Report (PDF)</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. The Number Barrel: Adding and Subtracting Mechanical Learning Aid -->
+            <article class="item-card">
+              <div class="card-image-wrapper">
+                <video class="card-image" autoplay muted loop playsinline>
+                  <source src="images/learning-aid-assembly-exploded.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="card-body">
+                <div>
+                  <div class="card-tag">CAD & Design</div>
+                  <h3 class="card-title">The Number Barrel</h3>
+                  <p class="card-description">A mechanical addition & subtraction toy for six-year-olds, built on a simplified Leibniz calculator mechanism and capped to a 0–20 range with a Geneva-drive stopwork. Designed with Edgar Yahir Gomez for MECE3408: Computer Graphics and Design.</p>
+                  <div class="mini-gallery">
+                    <img src="images/learning-aid-exploded-drawing.jpg" alt="Number Barrel exploded assembly drawing" onclick="event.stopPropagation(); openModal('The Number Barrel — Exploded Assembly', 'images/learning-aid-exploded-drawing.jpg', '26-part exploded assembly drawing with full parts list, 1:6 scale.')" />
+                    <img src="images/learning-aid-concept-sketch.jpg" alt="Number Barrel concept sketch" onclick="event.stopPropagation(); openModal('The Number Barrel — Early Concept Sketch', 'images/learning-aid-concept-sketch.jpg', 'Blackboard concept sketch exploring the directional add/subtract dial before landing on the final Leibniz-based mechanism.')" />
+                  </div>
+                </div>
+                <div>
+                  <div class="card-meta"><span>SolidWorks · MECE3408</span></div>
+                  <div class="card-actions">
+                    <button class="card-button" onclick="openModal('The Number Barrel — Exploded Assembly', 'images/learning-aid-exploded-drawing.jpg', '26-part exploded assembly drawing with full parts list, 1:6 scale.')">View Assembly Drawing</button>
+                    <a href="images/Number-Barrel-Report.pdf" target="_blank" rel="noopener" class="card-button secondary">Read the Full Report (PDF)</a>
                   </div>
                 </div>
               </div>
@@ -495,24 +545,29 @@
           <h3 class="subsection-title">⚙️ Manufacturing</h3>
           <div class="card-grid">
 
-            <!-- 1. 1930s Toy Racecar (Bugatti) - Manufacturing -->
+            <!-- 1. Bugatti Type 51 - Manufacturing -->
             <article class="item-card">
-              <div class="card-image-wrapper" onclick="openModal('1930s Toy Racecar (Bugatti) — Manufacturing', 'images/racecar-manufacturing.jpg', 'Machining and assembly photos of the finished Bugatti racecar build.')">
-                <!-- TODO: add images/racecar-manufacturing.jpg -->
-                <img src="images/racecar-manufacturing.jpg" alt="1930s Toy Racecar Bugatti Manufacturing" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/4f6b45?text=Add+Photo%3A+racecar-manufacturing.jpg';" />
+              <div class="card-image-wrapper" onclick="openModal('Bugatti Type 51 — Manufacturing', 'images/racecar-manufacturing.jpg', 'The finished Bugatti Type 51 build: silicone-cast body, 3D-printed cockpit, and injection-molded wheels.')">
+                <img src="images/racecar-manufacturing.jpg" alt="Finished Bugatti Type 51 Build" class="card-image" />
               </div>
               <div class="card-body">
                 <div>
                   <div class="card-tag">Fabrication & Machining</div>
-                  <h3 class="card-title">1930s Toy Racecar (Bugatti)</h3>
-                  <p class="card-description">Physical build of the Bugatti racecar from CAD to finished part — machining, assembly, and fit-up documentation.</p>
+                  <h3 class="card-title">Bugatti Type 51 (1931)</h3>
+                  <p class="card-description">Team build of the Bugatti Type 51 from CAD to finished model — a 3D-printed mold, silicone-cast body, CNC-machined wheel molds, and hand-cut axle rods, fully assembled.</p>
+                  <div class="mini-gallery">
+                    <img src="images/racecar-manufacturing-2.jpg" alt="3D printed mold and cast parts" onclick="event.stopPropagation(); openModal('Bugatti Build — Mold & Cast Parts', 'images/racecar-manufacturing-2.jpg', '3D-printed silicone mold halves alongside the cast body, cockpit, and axle components.')" />
+                    <img src="images/racecar-manufacturing-3.jpg" alt="CNC milled wheel molds" onclick="event.stopPropagation(); openModal('Bugatti Build — CNC Milled Wheel Molds', 'images/racecar-manufacturing-3.jpg', 'Aluminum wheel injection molds, CNC milled by the project team.')" />
+                    <img src="images/racecar-manufacturing-4.jpg" alt="Cutting axle rods on the bandsaw" onclick="event.stopPropagation(); openModal('Bugatti Build — Cutting Axle Rods', 'images/racecar-manufacturing-4.jpg', 'Cutting the axle rods to length on the bandsaw.')" />
+                  </div>
                 </div>
                 <div>
-                  <div class="card-meta"><span>CNC / Machining</span></div>
+                  <div class="card-meta"><span>Team 17 · Silicone Casting / CNC / Injection Molding</span></div>
                   <div class="card-actions">
-                    <button class="card-button" onclick="openModal('1930s Toy Racecar (Bugatti) — Manufacturing', 'images/racecar-manufacturing.jpg', 'Machining and assembly photos of the finished Bugatti racecar build.')">View Build Photos</button>
+                    <button class="card-button" onclick="openModal('Bugatti Type 51 — Manufacturing', 'images/racecar-manufacturing.jpg', 'The finished Bugatti Type 51 build: silicone-cast body, 3D-printed cockpit, and injection-molded wheels.')">View Build Photos</button>
+                    <a href="images/Bugatti-Type-51-Manufacturing-Report.pdf" target="_blank" rel="noopener" class="card-button secondary">Read the Build Report (PDF)</a>
                   </div>
-                  <a href="#solidworks-racecar" class="back-link">← Back to the SolidWorks design</a>
+                  <a href="#solidworks-bugatti" class="back-link">← Back to the SolidWorks design</a>
                 </div>
               </div>
             </article>
@@ -550,8 +605,7 @@
                 <div class="card-actions">
                   <a href="images/2023_VERITAS_SRI_Poster.pdf" target="_blank" rel="noopener" class="card-button">2023 SRI Poster (PDF)</a>
                   <a href="images/2024_SRI_VERITAS_Poster.pdf" target="_blank" rel="noopener" class="card-button">2024 SRI Poster (PDF)</a>
-                  <!-- TODO: add images/2026-senior-presentation.pdf -->
-                  <a href="images/2026-senior-presentation.pdf" target="_blank" rel="noopener" class="card-button secondary">2026 Senior Presentation (Slides)</a>
+                  <a href="images/Senior%20Presentation.pdf" target="_blank" rel="noopener" class="card-button secondary">2026 Senior Presentation (Slides)</a>
                   <p class="card-note">Manuscript on the B2 1811+31 flare event in progress.</p>
                 </div>
               </div>
@@ -594,8 +648,7 @@
               <div>
                 <div class="card-meta"><span>Summer 2026</span></div>
                 <div class="card-actions">
-                  <!-- TODO: add images/LSTS-Impact-Report.pdf -->
-                  <a href="images/LSTS-Impact-Report.pdf" target="_blank" rel="noopener" class="card-button">Impact Report (PDF)</a>
+                  <a href="pdfs/LSTS-Impact-Report.pdf" target="_blank" rel="noopener" class="card-button">Impact Report (PDF)</a>
                   <!-- TODO: replace # with the live LSTS website once your updates are published -->
                   <a href="#" class="card-button secondary disabled">Website (link coming soon)</a>
                 </div>
