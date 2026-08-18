@@ -452,7 +452,6 @@
     <section id="about" class="about-section">
       <div class="container">
         <div class="about-card">
-          <!-- Uses images/ProfilePhoto.jpg from your repo -->
           <img src="images/ProfilePhoto.jpg" alt="Cecilia Martinez Rodriguez" class="about-avatar" onclick="openModal('About Me', 'images/ProfilePhoto.jpg', 'Profile photo.')" />
           <div class="about-text">
             <h2>About Me</h2>
@@ -490,7 +489,6 @@
             <!-- 1. Reverse Engineered Toy Helicopter -->
             <article class="item-card">
               <div class="card-image-wrapper" onclick="openModal('Reverse Engineered Toy Helicopter', 'images/helicopter-render.jpg', 'CAD renders and measured drawings from the reverse-engineering process.')">
-                <!-- TODO: add images/helicopter-render.jpg -->
                 <img src="images/helicopter-render.jpg" alt="Reverse Engineered Toy Helicopter CAD" class="card-image" onerror="this.src='https://via.placeholder.com/600x400/eef1e6/6b8e5a?text=Add+Photo%3A+helicopter-render.jpg';" />
               </div>
               <div class="card-body">
@@ -501,12 +499,13 @@
                   <div class="mini-gallery">
                     <img src="images/helicopter-original.jpg" alt="Original GreenToys version" onerror="this.src='https://via.placeholder.com/300x200/eef1e6/6b8e5a?text=helicopter+original';" onclick="event.stopPropagation(); openModal('Helicopter — GreenToys Original', 'images/helicopter-original.jpg', 'Original GreenToys Toy.')" />
                     <img src="images/helicopter-exploded-drawing.jpg" alt="Helicopter exploded drawing" onerror="this.src='https://via.placeholder.com/300x200/eef1e6/6b8e5a?text=Helicopter+exploded+drawing';" onclick="event.stopPropagation(); openModal('Helicopter — Exploded Drawing', 'images/helicopter-exploded-drawing.jpg', 'Exploded assembly drawing.')" />
+                  </div>
                 </div>
                 <div>
                   <div class="card-meta"><span>SolidWorks</span></div>
                   <div class="card-actions">
-                    <!-- TODO: replace with link to your report/renders PDF, e.g. images/helicopter-report.pdf -->
                     <button class="card-button" onclick="openModal('Reverse Engineered Toy Helicopter', 'images/helicopter-render.jpg', 'CAD renders and measured drawings from the reverse-engineering process.')">View Renders</button>
+                    <a href="images/helicopter-report.pdf" target="_blank" rel="noopener" class="card-button secondary">Read the Full Report (PDF)</a>
                   </div>
                 </div>
               </div>
@@ -532,6 +531,7 @@
                   <div class="card-meta"><span>SolidWorks · MECE E3610</span></div>
                   <div class="card-actions">
                     <button class="card-button" onclick="openModal('Bugatti Type 51 (1931)', 'images/racecar-render.jpg', 'CAD assembly render of the Bugatti Type 51 toy racecar body, designed for silicone-mold casting.')">View Renders</button>
+                    <a href="images/Bugatti-Type-51-Manufacturing-Report.pdf" target="_blank" rel="noopener" class="card-button secondary">Read the Build Report (PDF)</a>
                   </div>
                 </div>
               </div>
