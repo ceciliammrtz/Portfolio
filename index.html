@@ -250,8 +250,9 @@
   .card-actions { display: flex; flex-direction: column; gap: 0.6rem; }
 
   /* Mini Gallery */
-  .mini-gallery { display: flex; gap: 0.5rem; margin-top: 0.85rem; }
+  .mini-gallery { display: flex; gap: 0.5rem; margin-top: 0.85rem; overflow-x: auto; padding-bottom: 0.3rem; }
   .mini-gallery img {
+    flex-shrink: 0;            /* Prevents thumbnails from squeezing */
     width: 56px;
     height: 56px;
     object-fit: cover;
@@ -260,12 +261,6 @@
     cursor: pointer;
     transition: all 0.2s ease;
   }
-  .mini-gallery img:hover {
-    border-color: var(--rose-hot);
-    transform: scale(1.08);
-    box-shadow: 0 4px 12px rgba(255, 0, 127, 0.3);
-  }
-
   /* Buttons */
   .card-button {
     background: var(--green-deep);
